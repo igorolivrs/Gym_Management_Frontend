@@ -1,0 +1,104 @@
+*{
+    font-weight: 500;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    width: 1070px;
+    height: 800px;
+}
+
+.img-content {
+    position: relative;
+}
+
+img {
+    border-radius: 8px 8px 0 0 ;
+    width: 1070px;
+}
+
+.box-aulas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -75px;
+    left: 455px;
+    width: 150px;
+    height: 75px;
+    background-color: rgb(58, 87, 232);
+    border-top: 5px solid white ;
+    border-left: 5px solid white ;
+    border-right: 5px solid white ;
+    border-radius: 8px 8px 0px 0px;
+    color: white;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+.box-aulas label {
+    color: white;
+    font-weight: 500;
+    font-size: 30px;
+} 
+
+.box-calendar {
+    position: absolute;
+    top: 310px;
+    background-color: white;
+    width: 1070px;
+    height: 100px;
+}
+
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 1070px;
+    height: 400px;
+    margin-top: 92px;
+    border-radius: 8px;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 500px;
+    height: 120px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.card_img  img{
+    width: 180px;
+    height: 120px;
+    border-radius: 8px 0px 0px 8px;
+}
+
+.card-description {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.card-description h5, h6 {
+    margin: 0;
+}
+
+.card-description h6, label{
+    font-size: 14px;
+    color: rgb(160, 160, 160);
+}
+
+.card-description label{
+    margin-left: 15px;
+}
+
+.card-description i{
+    margin-top: 10px;
+}

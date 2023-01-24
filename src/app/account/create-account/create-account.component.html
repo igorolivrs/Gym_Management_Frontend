@@ -1,0 +1,31 @@
+<main>
+    <div class="authentication">
+        <img class="text-center" src="../../../assets/images/Logo_texto_azul.png" alt="logo smart gym">
+        <h2 class="login text-center">Criar minha conta</h2>
+        <form id="signupForm" #form="ngForm">
+
+            <div class="form-group">
+                <label>Nome</label>
+                <input class="form-control" name="name" id="name" [(ngModel)]="account.name" required />
+            </div>
+            <div class="form-group">
+                <label>E-mail</label>
+                <input class="form-control" name="email" id="email" [(ngModel)]="account.email" required />
+            </div>
+            <div class="form-group">
+                <label>NIF</label>
+                <input class="form-control" name="nif" id="nif" [(ngModel)]="account.nif" required />
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input class="form-control" type="password" name="password" id="password" [(ngModel)]="account.password"
+                    required />
+            </div>
+            <div class="btns">
+                <button type="submit" class="btn btn-primary btn-block" (click)="createAccount()" >Criar minha conta</button> 
+
+                <button type="button" class="btn btn-link btn-block" [routerLink]="['']" >Já possui uma conta? Faça o Login.</button> 
+            </div>
+        </form>
+    </div>
+</main>

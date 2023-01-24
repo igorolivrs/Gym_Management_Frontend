@@ -1,0 +1,32 @@
+<div class="container">
+
+    <div class="img-content">
+        <div class="">
+            <img src="../../../assets/images/Bg_aulas.png" alt="">
+        </div>
+        <div class="box-calendar">
+            <div class="box-aulas">
+                <label>AULAS</label>
+            </div>
+            <div class="calendar">
+                <div><label> < </label></div>
+   
+            </div>
+        </div>
+    </div>
+
+    <div class="box-container">
+        <div class="card" *ngFor="let aula of aulasList; let i = index">
+            <div class="card_img">
+                <img src="../../../assets/images/aula_pilates.jpg" alt="">
+            </div>
+            <div class="card-description">
+                <h5>{{aula.nome_aula}}</h5>
+                <h6>{{aula.nivel}}</h6>
+                <i class="fa-regular fa-circle-user"><label>20/20 - Participantes</label></i>
+                <i class="fa-regular fa-clock"><label>09:30h - {{aula.duracao}}</label></i>
+            </div>
+        </div>
+    </div>
+    
+</div>

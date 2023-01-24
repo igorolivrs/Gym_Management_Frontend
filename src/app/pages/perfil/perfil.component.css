@@ -1,0 +1,89 @@
+*{
+    font-weight: 500;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    width: 1070px;
+    height: 800px;
+    background-color:  rgb(238, 238, 238);
+}
+
+img {
+    border-radius: 8px 8px 0 0 ;
+    width: 1070px;
+}
+
+.img-content {
+    position: relative;
+}
+
+.img-content-photo {
+    display: flex;
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    border: 6px solid white;
+    border-radius: 50%;
+    top: 180px;
+    left: 80px;
+}
+
+.img-content-photo img{
+    border-radius: 50%;
+}
+
+.img-content-photo .icon-edit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 25%;
+    background-color: rgb(58, 87, 232);
+    position: absolute;
+    top: 130px;
+    left: 130px;
+    cursor: pointer;
+}
+
+.img-content-photo .icon-edit i {
+    color: white;
+}
+
+.box-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 90px 80px;
+    width: 1070px;
+    height: 500px;
+    margin-top: 30px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: row;
+    width: 1070px;
+    justify-content: center;
+}
+
+.form-group{
+    margin: 20px 50px;
+}
+
+.form-control {
+    width: 300px;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+
+
