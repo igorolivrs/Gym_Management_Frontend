@@ -1,0 +1,89 @@
+<div class="container">
+    <div class="card">
+        <div class="card_img">
+            <img src="{{aula.image}}" alt="">
+        </div>
+        <div class="card-nome-aula">
+            <h3>{{aula.nome_aula}}</h3>
+        </div>
+    </div>
+    <div class="box-content-description">
+        <div class="card-box-description">
+            <div>
+                <i class="fa-solid fa-circle-user"></i>
+            </div>
+            <div class="card-content-description">
+                <label>Instrutor:</label>
+                <p>{{ aula.instrutor }}</p>
+
+            </div>
+        </div>
+        <hr>
+        <div class="card-box-description">
+            <div>
+                <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div class="card-content-description">
+                <label>Local ou Sala:</label>
+                <p>{{ aula.local }}</p>
+
+            </div>
+        </div>
+        <hr>
+        <div class="card-box-description">
+            <div>
+                <i class="fa-regular fa-calendar-days"></i>
+            </div>
+            <div class="card-content-description">
+                <label>Data:</label>
+                <p>{{ aula.data }}</p>
+
+            </div>
+        </div>
+        <hr>
+        <div class="card-box-description">
+            <div>
+                <i class="fa-regular fa-clock"></i>
+            </div>
+            <div class="card-content-description">
+                <label>Horário:</label>
+                <p>{{ aula.horario }} H</p>
+
+            </div>
+        </div>
+        <hr>
+        <div class="card-box-description">
+            <div>
+                <i class="fa-solid fa-hourglass-start"></i>
+            </div>
+            <div class="card-content-description">
+                <label>Duração:</label>
+                <p>{{ aula.duracao }}</p>
+
+            </div>
+        </div>
+        <hr>
+        <div class="card-box-description">
+            <div>
+                <i class="fa-solid fa-bolt"></i>
+            </div>
+            <div class="card-content-description">
+                <label>Nível:</label>
+                <p>{{ aula.nivel }}</p>
+
+            </div>
+        </div>
+        <hr>
+        <div class="card-box-description">
+            <div>
+                <i class="fa-regular fa-message"></i>
+            </div>
+            <div class="card-content-description">
+                <label>Descrição:</label>
+                <p>{{ aula.descricao }}</p>
+
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block" (click)="reservarAula()">Reservar Aula</button> 
+</div>

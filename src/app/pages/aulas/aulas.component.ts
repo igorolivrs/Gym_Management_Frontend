@@ -8,9 +8,9 @@ import { AulasService } from 'src/app/services/aulas.service';
 })
 export class AulasComponent {
 
-  aulasList: any;
+  aulasList: any = [];
 
-  constructor(private aulasService: AulasService ) { }
+  constructor(private aulasService: AulasService) { }
 
 
   ngOnInit(): void {

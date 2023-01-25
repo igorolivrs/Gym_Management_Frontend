@@ -1,0 +1,19 @@
+.container {
+    width: 500px;
+}
+
+.form-group {
+    margin: 15px 0px;
+}
+
+.box-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}

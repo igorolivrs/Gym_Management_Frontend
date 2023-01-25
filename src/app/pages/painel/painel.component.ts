@@ -9,7 +9,7 @@ import jwt_decode from 'jwt-decode';
 })
 export class PainelComponent {
 
-  clienteList: any;
+  clienteList: any = {};
 
   constructor(private accountService: AccountService) {}
 

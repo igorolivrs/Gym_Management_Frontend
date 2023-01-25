@@ -2,12 +2,23 @@
 
     <ul class="nav-list" [ngClass]="{'nav-list-open': sideBarStatus}">
 
-        <li class="nav-list-item" *ngFor="let item of list" routerLink="{{item.rota}}">
-            <i class="{{item.icon}}"></i>
-            <span>
-                <a>{{item.name}}</a>
-            </span>
-        </li>
-        <hr>
+        <div *ngIf="currentCliente.nif !== '999999999' ; else resultSearch">
+            <li class="nav-list-item" *ngFor="let item of list" routerLink="{{item.rota}}">
+                <i class="{{item.icon}}"></i>
+                <span>
+                    <a>{{item.name}}</a>
+                </span>
+            </li>
+            <hr>
+        </div>
     </ul>
 </div>
+<ng-template #resultSearch>
+    <li class="nav-list-item" *ngFor="let item of BackOffice" routerLink="{{item.rota}}">
+        <i class="{{item.icon}}"></i>
+        <span>
+            <a>{{item.name}}</a>
+        </span>
+    </li>
+    <hr>
+</ng-template>
