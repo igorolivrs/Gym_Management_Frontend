@@ -9,16 +9,17 @@
                 <label>AULAS</label>
             </div>
             <div class="calendar">
-                <div><label> < </label></div>
+                <div><label></label></div>
    
             </div>
         </div>
     </div>
 
     <div class="box-container">
-        <div class="card" *ngFor="let aula of aulasList; let i = index">
+        <div class="card" *ngFor="let aula of aulasList; let i = index"
+        [routerLink]="['../aulas-details', aula.id]" routerLinkActive="router-link-active">
             <div class="card_img">
-                <img src="../../../assets/images/aula_pilates.jpg" alt="">
+                <img src="{{aula.image}}" alt="">
             </div>
             <div class="card-description">
                 <h5>{{aula.nome_aula}}</h5>

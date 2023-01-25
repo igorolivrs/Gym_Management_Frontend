@@ -15,16 +15,37 @@ export class AulasService {
     return token;
   }
 
-    getAulas() {
+  getAulas() {
     let token = this.getAuthorizationToken();
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`
     });
-    
+
     const requestOptions = { headers: headers };
     return this.http.get(`${environment.api}/aulas`, requestOptions)
+  }
 
+  getAulaById(id: any): Observable<any> {
+    let token = this.getAuthorizationToken();
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    });
+
+    const requestOptions = { headers: headers };
+    return this.http.get(`${environment.api}/aulas/${id}`, requestOptions);
+  }
+
+  reservarAula(aula: any): Observable<any> {
+    let token = this.getAuthorizationToken();
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    });
+
+    const requestOptions = { headers: headers };
+    return this.http.post(`${environment.api}/reservas`, aula, requestOptions);
   }
 
 }

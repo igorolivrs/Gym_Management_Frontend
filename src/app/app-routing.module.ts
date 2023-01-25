@@ -9,6 +9,9 @@ import { AulasComponent } from './pages/aulas/aulas.component';
 import { PainelComponent } from './pages/painel/painel.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { TreinosComponent } from './pages/treinos/treinos.component';
+import { AulasDetailsComponent } from './pages/aulas-details/aulas-details.component';
+import { ClientesComponent } from './backoffice/clientes/clientes.component';
+import { AddAulasComponent } from './backoffice/add-aulas/add-aulas.component';
 
 const routes: Routes = [
   {
@@ -20,6 +23,9 @@ const routes: Routes = [
       { path: 'perfil', component: PerfilComponent},
       { path: 'aulas', component: AulasComponent},
       { path: 'treinos', component: TreinosComponent},
+      { path: 'aulas-details/:id', component: AulasDetailsComponent},
+      { path: 'clientes', component: ClientesComponent},
+      { path: 'add-aulas', component: AddAulasComponent},
     ],
     canActivate: [AuthGuard]
 

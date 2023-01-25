@@ -1,0 +1,77 @@
+<main>
+    <div class="container">
+        <img src="../../../assets/images/aula_" alt="">
+        <h2 class="login text-center">Adicionar uma aula</h2>
+        <form id="addAulaForm" #form="ngForm">
+            <div class="box-content">
+                <div class="box1">
+                    <div class="form-group">
+                        <label>Nome Aula</label>
+                        <select class="form-control" id="nome_aula"
+                        [(ngModel)]="aula.nome_aula" name="nome_aula" required>
+                        <option class="form-group" *ngFor="let aula of aulaList" [value] ="aula" required>{{aula}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Data</label>
+                        <input type="date" min="2023-01-01" class="form-control" name="data" id="data" [(ngModel)]="aula.data" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Horário</label>
+                        <select class="form-control" id="horario"
+                        [(ngModel)]="aula.horario" name="horario" required>
+                        <option class="form-group" *ngFor="let horario of horarioList" [value] ="horario" required>{{horario}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Instrutor</label>
+                        <input class="form-control" name="instrutor" id="instrutor" [(ngModel)]="aula.instrutor" required />
+                    </div>
+                </div>
+                <div class="box2">
+                    <div class="form-group">
+                        <label>Local</label>
+                        <select class="form-control" id="local"
+                        [(ngModel)]="aula.local" name="local" required>
+                        <option class="form-group" *ngFor="let local of localList" [value] ="local" required>{{local}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Duração</label>
+                        <select class="form-control" id="duracao"
+                        [(ngModel)]="aula.duracao" name="duracao" required>
+                        <option class="form-group" *ngFor="let duracao of duracaoList" [value] ="duracao" required>{{duracao}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Nível</label>
+                        <select class="form-control" id="nivel"
+                        [(ngModel)]="aula.nivel" name="nivel" required>
+                        <option class="form-group" *ngFor="let nivel of nivelList" [value] ="nivel" required>{{nivel}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Imagem Card Aula</label>
+                        <select class="form-control" id="image"
+                        [(ngModel)]="aula.image" name="image" required>
+                        <option class="form-group" value="../../../assets/images/aula_pilates.jpg" required>Pilates</option>
+                        <option class="form-group" value="../../../assets/images/aula_bodypump.png" required>Body Pump</option>
+                        <option class="form-group" value="../../../assets/images/aula_spinning.png" required>Spinning</option>
+                        <option class="form-group" value="../../../assets/images/aula_powerjump.png" required>Power Jump</option>
+                        <option class="form-group" value="../../../assets/images/aula_bodybalance.png" required>Body Balance</option>
+                        <option class="form-group" value="../../../assets/images/aula_ultimate_bodyworkout.png" required>Ultimate Body Workout</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Descrição</label>
+                <textarea class="form-control" name="descricao" id="descricao" [(ngModel)]="aula.descricao"></textarea>
+            </div>
+            <div class="btns">
+                <button type="submit" class="btn btn-primary btn-block" (click)="createAula()">Adicionar aula</button>
+            </div>
+        </form>
+    </div>
+</main>

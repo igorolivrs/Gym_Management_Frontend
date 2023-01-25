@@ -20,6 +20,9 @@ import { NgToastModule } from 'ng-angular-popup';
 
 
 import { httpInterceptorProviders } from './http-interceptors';
+import { AulasDetailsComponent } from './pages/aulas-details/aulas-details.component';
+import { ClientesComponent } from './backoffice/clientes/clientes.component';
+import { AddAulasComponent } from './backoffice/add-aulas/add-aulas.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,9 @@ import { httpInterceptorProviders } from './http-interceptors';
     PerfilComponent,
     AulasComponent,
     TreinosComponent,
+    AulasDetailsComponent,
+    ClientesComponent,
+    AddAulasComponent,
   ],
   imports: [
     BrowserModule,
