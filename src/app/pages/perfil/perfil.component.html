@@ -2,7 +2,7 @@
 
     <div class="img-content">
         <div class="img-content-photo">
-            <img src="../../../assets/images/gordola.png" alt="foto utilizador">
+            <img src="../../../assets/images/user_dafault.jpg" alt="foto utilizador">
             <div class="icon-edit">
                 <i class="fa-solid fa-pen-to-square"></i>
             </div>
@@ -16,26 +16,26 @@
             <div class="inputs">
                 <div class="form-group">
                     <label>Nome</label>
-                    <input class="form-control" name="nif" id="nome" placeholder="{{cliente.name}}"/>
+                    <input class="form-control" name="nome" id="nome" placeholder="{{cliente.name}}" [(ngModel)]="updateAccount.name"/>
                 </div>
                 <div class="form-group">
                     <label>Email</label>
-                    <input class="form-control" type="email" name="email" id="email" placeholder="{{cliente.email}}"/>
+                    <input class="form-control" type="email" name="email" id="email" placeholder="{{cliente.email}}" [(ngModel)]="updateAccount.email"/>
                 </div>
             </div>
             <div class="inputs">
                 <div class="form-group">
                     <label>NIF</label>
-                    <input class="form-control" name="nif" id="nif" placeholder="{{cliente.nif}}"/>
+                    <input class="form-control" name="nif" id="nif" placeholder="{{cliente.nif}}" [(ngModel)]="updateAccount.nif"/>
                 </div>
                 <div class="form-group">
                     <label>Password</label>
-                    <input class="form-control" type="password" name="password" id="password"/>
+                    <input class="form-control" type="password" name="password" id="password" [(ngModel)]="updateAccount.password"/>
                 </div>
             </div>
 
             <div class="btns">
-                <button type="submit" class="btn btn-primary btn-block" [disabled]="form.form.invalid">Salvar</button>
+                <button type="submit" class="btn btn-primary btn-block" [disabled]="form.form.invalid" (click)=" updateCliente(cliente.id)">Atualizar Dados</button>
             </div>
         </form>
     </div>

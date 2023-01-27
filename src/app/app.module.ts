@@ -18,11 +18,15 @@ import { AulasComponent } from './pages/aulas/aulas.component';
 import { TreinosComponent } from './pages/treinos/treinos.component';
 import { NgToastModule } from 'ng-angular-popup';
 
-
 import { httpInterceptorProviders } from './http-interceptors';
 import { AulasDetailsComponent } from './pages/aulas-details/aulas-details.component';
 import { ClientesComponent } from './backoffice/clientes/clientes.component';
 import { AddAulasComponent } from './backoffice/add-aulas/add-aulas.component';
+import { ReservasComponent } from './pages/reservas/reservas.component';
+import { PerfilClientesComponent } from './backoffice/perfil-clientes/perfil-clientes.component';
+import { ReservasDetailsComponent } from './pages/reservas-details/reservas-details.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+
 
 @NgModule({
   declarations: [
@@ -41,6 +45,10 @@ import { AddAulasComponent } from './backoffice/add-aulas/add-aulas.component';
     AulasDetailsComponent,
     ClientesComponent,
     AddAulasComponent,
+    ReservasComponent,
+    PerfilClientesComponent,
+    ReservasDetailsComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

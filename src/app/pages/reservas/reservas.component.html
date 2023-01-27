@@ -1,0 +1,42 @@
+<div class="container">
+
+    <div class="img-content">
+        <div class="">
+            <img src="../../../assets/images/bg_reservas.jpg" alt="">
+        </div>
+
+        <div class="box-reservas">
+            <label>RESERVAS</label>
+        </div>
+    </div>
+
+    <div class="box-container" *ngIf="reservasList.length !== 0 ; else resultSearch">
+        <div class="card" *ngFor="let reserva of reservasList" [routerLink]="['../reservas/details', reserva.id]"
+            routerLinkActive="router-link-active">
+            <div class="card_img">
+                <img src="{{reserva.aula_image}}" alt="">
+            </div>
+            <div class="card-description">
+                <h5>{{reserva.aula_nome}}</h5>
+                <h6>{{reserva.aula_nivel}}</h6>
+                <i class="fa-regular fa-calendar-days"><label>{{reserva.aula_data}}</label></i>
+                <i class="fa-regular fa-clock"><label>{{reserva.aula_horario}} H</label></i>
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #resultSearch>
+    <div class="card-sem-reservas">
+        <div class="card-msg">
+            <h5 class="card-title">Minhas Reservas</h5>
+        </div>
+        <div class="center">
+            <img src="../../../assets/images/emoticon_reservas.png">
+            <h4>Você não possui aulas reservadas</h4>
+            <h6>Adicione uma aula agora</h6>
+        </div>
+        <div class="button">
+            <button class="btn btn-primary" routerLink="/aulas">Reservar Aulas</button>
+        </div>
+    </div>
+</ng-template>

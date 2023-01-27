@@ -15,7 +15,7 @@ export class AddAulasComponent implements OnInit {
 
   duracaoList: string[] = ['30 minutos', '45 minutos', '60 minutos'];
 
-  nivelList: string[] = ['Leve', 'Moderado', 'Intenso'];
+  nivelList: any = [];
 
   localList: string[] = ['Salão 1', 'Salão 2', 'Salão 3'];
 
@@ -31,10 +31,11 @@ export class AddAulasComponent implements OnInit {
     image: '',
   };
 
-
+  
   constructor(private addAulaService: AddAulasService, private toast: NgToastService) { }
 
   ngOnInit() {
+    this.readNiveis();
   }
 
 
@@ -53,14 +54,40 @@ export class AddAulasComponent implements OnInit {
 
     this.addAulaService.createAula(data).subscribe(
       response => {
-        this.toast.success({detail: "SUCCESS", summary: "Aula cadastrada com sucesso", duration: 4000});
+        this.toast.success({ detail: "SUCCESS", summary: "Aula cadastrada com sucesso", duration: 4000 });
+        this.newAula();
         console.log(response);
       },
       error => {
-        this.toast.error({detail: "ERROR", summary: `${error}`, duration: 4000});
+        this.toast.error({ detail: "ERROR", summary: `${error}`, duration: 4000 });
         console.log(error);
       });
+  }
 
-    
+  newAula(): void {
+    this.aula = {
+      nome_aula: '',
+      data: '',
+      horario: '',
+      instrutor: '',
+      local: '',
+      duracao: '',
+      nivel: '',
+      descricao: '',
+      image: '',
+    };
+  }
+
+  readNiveis(): void {
+    this.addAulaService.getNiveis()
+      .subscribe(
+        niveis => {
+          this.nivelList = niveis;
+          console.log(this.nivelList);
+        },
+        error => {
+          console.log(error);
+        }
+      )
   }
 }

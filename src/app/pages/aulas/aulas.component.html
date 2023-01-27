@@ -4,20 +4,14 @@
         <div class="">
             <img src="../../../assets/images/Bg_aulas.png" alt="">
         </div>
-        <div class="box-calendar">
-            <div class="box-aulas">
-                <label>AULAS</label>
-            </div>
-            <div class="calendar">
-                <div><label></label></div>
-   
-            </div>
+        <div class="box-aulas">
+            <label>AULAS</label>
         </div>
     </div>
 
     <div class="box-container">
-        <div class="card" *ngFor="let aula of aulasList; let i = index"
-        [routerLink]="['../aulas-details', aula.id]" routerLinkActive="router-link-active">
+        <div class="card" *ngFor="let aula of aulasList; let i = index" [routerLink]="['../aulas/details', aula.id]"
+            routerLinkActive="router-link-active">
             <div class="card_img">
                 <img src="{{aula.image}}" alt="">
             </div>
@@ -29,5 +23,5 @@
             </div>
         </div>
     </div>
-    
+
 </div>

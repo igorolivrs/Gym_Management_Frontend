@@ -36,6 +36,12 @@ export class SideBarComponent {
       icon: 'fa-solid fa-dumbbell',
       rota: '/treinos',
     },
+    {
+      number: '5',
+      name: 'Reservas',
+      icon: 'fa-solid fa-calendar-week',
+      rota: '/reservas',
+    },
   ];
 
   BackOffice = [

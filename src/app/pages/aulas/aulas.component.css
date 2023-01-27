@@ -25,7 +25,7 @@ img {
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: -75px;
+    top: 236.5px;
     left: 455px;
     width: 150px;
     height: 75px;
@@ -45,21 +45,13 @@ img {
     font-size: 30px;
 } 
 
-.box-calendar {
-    position: absolute;
-    top: 310px;
-    background-color: white;
-    width: 1070px;
-    height: 100px;
-}
-
 .box-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     width: 1070px;
     height: 400px;
-    margin-top: 92px;
+    margin-top: 30px;
     border-radius: 8px;
 }
 

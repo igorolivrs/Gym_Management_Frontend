@@ -12,6 +12,10 @@ import { TreinosComponent } from './pages/treinos/treinos.component';
 import { AulasDetailsComponent } from './pages/aulas-details/aulas-details.component';
 import { ClientesComponent } from './backoffice/clientes/clientes.component';
 import { AddAulasComponent } from './backoffice/add-aulas/add-aulas.component';
+import { ReservasComponent } from './pages/reservas/reservas.component';
+import { PerfilClientesComponent } from './backoffice/perfil-clientes/perfil-clientes.component';
+import { ReservasDetailsComponent } from './pages/reservas-details/reservas-details.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -22,9 +26,12 @@ const routes: Routes = [
       { path: 'painel', component: PainelComponent},
       { path: 'perfil', component: PerfilComponent},
       { path: 'aulas', component: AulasComponent},
+      { path: 'aulas/details/:id', component: AulasDetailsComponent},
       { path: 'treinos', component: TreinosComponent},
-      { path: 'aulas-details/:id', component: AulasDetailsComponent},
+      { path: 'reservas', component: ReservasComponent},
+      { path: 'reservas/details/:id', component: ReservasDetailsComponent},
       { path: 'clientes', component: ClientesComponent},
+      { path: 'perfil/cliente/:id', component: PerfilClientesComponent},
       { path: 'add-aulas', component: AddAulasComponent},
     ],
     canActivate: [AuthGuard]
@@ -37,8 +44,12 @@ const routes: Routes = [
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: 'login', component: LoginComponent },
       { path: 'create-account', component: CreateAccountComponent },
+      { path: 'error', component: NotFoundComponent },
     ]
-  }
+  },
+  { 
+    path:'**', redirectTo:'error'
+  },
 ];
 
 @NgModule({

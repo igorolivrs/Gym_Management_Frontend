@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environments';
-import { Observable } from 'rxjs';
 import jwt_decode from 'jwt-decode';
-
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AccountService {
+export class ReservasService {
+
 
   constructor(private http: HttpClient) { }
 
@@ -25,21 +25,8 @@ export class AccountService {
     }
   }
 
-  async login(user: any) {
-    const result = await this.http.post<any>(`${environment.apiAuth}/auth/signin`, user).toPromise();
-    if (result && result.token) {
-      window.localStorage.setItem('token', result.token);
-      return true;
-    }
 
-    return false;
-  }
-
-  createAccount(account: any): Observable<any> {
-    return this.http.post(`${environment.apiAuth}/auth/signup`, account);
-  }
-
-  getCliente() {
+  getReserva(): Observable<any> {
     let token = this.getAuthorizationToken();
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -47,10 +34,10 @@ export class AccountService {
     });
 
     const requestOptions = { headers: headers };
-    return this.http.get(`${environment.api}/clientes`, requestOptions)
+    return this.http.get(`${environment.api}/reservas`, requestOptions);
   }
 
-  getClienteById(id: any) {
+  getReservaById(id: any): Observable<any> {
     let token = this.getAuthorizationToken();
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -58,10 +45,10 @@ export class AccountService {
     });
 
     const requestOptions = { headers: headers };
-    return this.http.get(`${environment.api}/clientes/${id}`, requestOptions)
+    return this.http.get(`${environment.api}/reservas/${id}`, requestOptions);
   }
 
-  updateCliente(id: any, data: any): Observable<any> {
+  reservarAula(aula: any): Observable<any> {
     let token = this.getAuthorizationToken();
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -69,10 +56,10 @@ export class AccountService {
     });
 
     const requestOptions = { headers: headers };
-    return this.http.put(`${environment.api}/clientes/${id}`, data, requestOptions)
+    return this.http.post(`${environment.api}/reservas`, aula, requestOptions);
   }
 
-  deleteCliente(id: any): Observable<any> {
+  deleteReserva(id: any): Observable<any> {
     let token = this.getAuthorizationToken();
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -80,8 +67,8 @@ export class AccountService {
     });
 
     const requestOptions = { headers: headers };
-    return this.http.delete(`${environment.api}/clientes/${id}`, requestOptions);
+    return this.http.delete(`${environment.api}/reservas/${id}`, requestOptions);
   }
+
 
 }
-

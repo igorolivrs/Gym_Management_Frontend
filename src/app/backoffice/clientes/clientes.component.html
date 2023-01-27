@@ -1,1 +1,29 @@
-<p>clientes works!</p>
+<main>
+    <div class="container">
+        <h2 class="login text-center">Consultar Cliente</h2>
+        <div class="search-container">
+            <form>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="   Encontrar cliente pelo nome ..." (input)="searchName($event)">
+            </form>
+            <form>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Encontrar cliente pelo NIF ..." (input)="searchNif($event)">
+            </form>
+        </div>
+        <tr>
+            <td class="td_id">ID</td>
+            <td class="td_nome">NOME</td>
+            <td class="td_email">EMAIL</td>
+            <td class="td_nif">NIF</td>
+            <td class="td_edit">EDIT</td>
+        </tr>
+        <tr *ngFor="let cliente of clientesFilterList">
+            <td class="td_id">{{cliente.id}}</td>
+            <td class="td_nome">{{cliente.name}}</td>
+            <td class="td_email">{{cliente.email}}</td>
+            <td class="td_nif">{{cliente.nif}}</td>
+            <td class="td_edit"><button type="button" class="btn btn-primary btn-block" [routerLink]="['../perfil/cliente', cliente.id]">Editar</button></td>
+        </tr>
+    </div>
+</main>
