@@ -32,25 +32,16 @@ export class CreateAccountComponent implements OnInit {
 
     this.accountService.createAccount(data).subscribe(
       response => {
-        this.toast.success({detail: "SUCCESS", summary: "Utilizador cadastrado com sucesso", duration: 4000});
+        this.toast.success({ detail: "SUCCESS", summary: "Utilizador cadastrado com sucesso", duration: 4000 });
         console.log(response);
         this.router.navigate(['']);
       },
       error => {
-        this.toast.error({detail: "ERROR", summary: `${error}`, duration: 4000});
+        this.toast.error({ detail: "ERROR", summary: `${error}`, duration: 4000 });
         console.log(error);
       });
 
-    
   }
 
-  newAccount(): void {
-    this.account = {
-      name: '',
-      email: '',
-      nif: '',
-      password: '',
-    };
-  }
 
 }

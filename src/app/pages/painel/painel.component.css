@@ -6,7 +6,7 @@
 }
 
 img {
-    width: auto;
+    width: 1070px;
 }
 
 .img-content {
@@ -35,8 +35,6 @@ img {
     position: absolute;
     width: 170px;
     height: 170px;
-    border: 6px solid rgb(58, 87, 232);
-    background-color: white;
     border-radius: 50%;
     top: 210px;
     left: 85px;
@@ -45,6 +43,7 @@ img {
 .img-content-photo img{
     border-radius: 50%;
 }
+
 .box-container {
     display: flex;
     flex-direction: row;

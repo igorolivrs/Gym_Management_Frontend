@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AccountService } from 'src/app/services/account.service';
-import jwt_decode from 'jwt-decode';
+import { NgToastService } from 'ng-angular-popup';
 
 @Component({
   selector: 'app-perfil',
@@ -11,21 +11,20 @@ export class PerfilComponent {
 
   cliente: any = {};
 
-  constructor(private accountService: AccountService) {}
+  updateAccount = {
+    name: '',
+    email: '',
+    nif: '',
+    password: '',
+  };
+
+  constructor(private accountService: AccountService, private toast: NgToastService) {}
 
   ngOnInit(): void {
     const token = this.accountService.getAuthorizationToken();
-    const tokenInfo = this.getDecodedAccessToken(token);
+    const tokenInfo = this.accountService.getDecodedAccessToken(token);
     console.log(tokenInfo);
     this.getClienteById(tokenInfo.id);
-  }
-
-  getDecodedAccessToken(token: any): any {
-    try {
-      return jwt_decode(token);
-    } catch(Error) {
-      return null;
-    }
   }
 
   getClienteById(id:any): void {
@@ -38,6 +37,28 @@ export class PerfilComponent {
         console.log(error);
       }
     )
+  }
+
+  updateCliente(id: any): void {
+    const data = {
+      name: this.updateAccount.name,
+      email: this.updateAccount.email,
+      nif: this.updateAccount.nif,
+      password: this.updateAccount.password
+    };
+
+    this.accountService.updateCliente(id, data)
+    .subscribe(
+      (res) => {
+        this.toast.success({detail: "SUCCESS", summary: "Dados atualizados com sucesso", duration: 4000});
+        console.log(res);
+      },
+      error => {
+        this.toast.error({detail: "ERROR", summary: `${error}`, duration: 4000});
+        console.log(error);
+      }
+    )
+
   }
 
 }

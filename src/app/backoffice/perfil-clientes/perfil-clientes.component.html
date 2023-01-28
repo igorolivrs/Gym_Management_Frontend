@@ -1,0 +1,38 @@
+<main>
+    <div class="box-container">
+        <a class="btn btn-primary" routerLink="/clientes"><i class="fa-solid fa-arrow-left"></i>voltar</a>
+        <h4>Dados do Cliente</h4>
+        <form  #form="ngForm">
+            <div class="inputs">
+                <div class="form-group">
+                    <label>ID</label>
+                    <input class="form-control" name="id" id="id" placeholder="{{cliente.id}}" [(ngModel)]="cliente.id" disabled/>
+                </div>
+                <div class="form-group">
+                    <label>Nome</label>
+                    <input class="form-control" name="nome" id="nome" placeholder="{{cliente.name}}" [(ngModel)]="cliente.name"/>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input class="form-control" type="email" name="email" id="email" placeholder="{{cliente.email}}" [(ngModel)]="cliente.email"/>
+                </div>
+            </div>
+            <div class="inputs">
+                <div class="form-group">
+                    <label>NIF</label>
+                    <input class="form-control" name="nif" id="nif" placeholder="{{cliente.nif}}" [(ngModel)]="cliente.nif"/>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input class="form-control" type="password" name="password" id="password" [(ngModel)]="cliente.password"/>
+                </div>
+            </div>
+
+            <div class="btns">
+                <button type="button" class="btn btn-primary btn-block" [disabled]="form.form.invalid" (click)="createAccount()">Criar Nova Conta</button>
+                <button type="button" class="btn btn-primary btn-block" [disabled]="form.form.invalid" (click)="updateCliente(cliente.id)">Atualizar Dados</button>
+                <button type="button" class="btn btn-danger btn-block" (click)="deletarConta(cliente.id)" routerLink="/clientes">Deletar Conta</button>
+            </div>
+        </form>
+    </div>
+</main>

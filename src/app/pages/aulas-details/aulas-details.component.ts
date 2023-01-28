@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import { AulasService } from 'src/app/services/aulas.service';
 import jwt_decode from 'jwt-decode';
+import { ReservasService } from 'src/app/services/reservas.service';
 
 
 @Component({
@@ -27,14 +28,15 @@ export class AulasDetailsComponent {
      image: ""
   };
 
-  constructor(private aulasService: AulasService, private route: ActivatedRoute, private toast: NgToastService) { }
+  constructor(private aulasService: AulasService, private route: ActivatedRoute, private toast: NgToastService, private reservasService: ReservasService) { }
 
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     this.getAula(id);
     const token = this.aulasService.getAuthorizationToken();
-    this.currentCliente = this.getDecodedAccessToken(token);
+    this.currentCliente = this.getDecodedAccessToken(token); 
+
     console.log(this.currentCliente);
   }
 
@@ -61,9 +63,18 @@ export class AulasDetailsComponent {
     const data = {
       cliente_id: this.currentCliente.id,
       aula_id: this.aula.id,
+      aula_nome: this.aula.nome_aula,
+      aula_data: this.aula.data,
+      aula_horario: this.aula.horario,
+      aula_instrutor: this.aula.instrutor,
+      aula_local: this.aula.local,
+      aula_duracao: this.aula.duracao,
+      aula_nivel: this.aula.nivel,
+      aula_descricao: this.aula.descricao,
+      aula_image: this.aula.image
     };
 
-    this.aulasService.reservarAula(data).subscribe(
+    this.reservasService.reservarAula(data).subscribe(
       response => {
         this.toast.success({detail: "SUCCESS", summary: "Reserva realizada com sucesso", duration: 4000});
         console.log(response);
@@ -72,7 +83,6 @@ export class AulasDetailsComponent {
         this.toast.error({detail: "ERROR", summary: `${error}`, duration: 4000});
         console.log(error);
       });
-
-    
   }
+
 }

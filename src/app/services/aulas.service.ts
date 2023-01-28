@@ -37,15 +37,4 @@ export class AulasService {
     return this.http.get(`${environment.api}/aulas/${id}`, requestOptions);
   }
 
-  reservarAula(aula: any): Observable<any> {
-    let token = this.getAuthorizationToken();
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`
-    });
-
-    const requestOptions = { headers: headers };
-    return this.http.post(`${environment.api}/reservas`, aula, requestOptions);
-  }
-
 }
