@@ -1,8 +1,13 @@
 <main>
     <div class="container">
-        <h2 class="login text-center">Adicionar uma aula</h2>
+        <h2 class="login text-center">Alterar uma aula</h2>
         <a class="btn btn-primary" routerLink="/backoffice/aulas"><i class="fa-solid fa-arrow-left"></i>voltar</a>
         <form id="addAulaForm" #form="ngForm">
+            <div class="form-group">
+                <label>ID</label>
+                <input type="text" class="form-control" name="id" id="id"
+                    [(ngModel)]="aula.id" disabled />
+            </div>
             <div class="box-content">
                 <div class="box1">
                     <div class="form-group">
@@ -78,7 +83,8 @@
                 <textarea class="form-control" name="descricao" id="descricao" [(ngModel)]="aula.descricao"></textarea>
             </div>
             <div class="btns">
-                <button type="submit" class="btn btn-primary btn-block" (click)="createAula()">Adicionar aula</button>
+                <button type="submit" class="btn btn-primary btn-block" (click)="updateAula(aula.id)">Editar Aula</button>
+                <button type="button" class="btn btn-danger btn-block" (click)="deletarAula(aula.id)" routerLink="/backoffice/aulas">Deletar Aula</button>
             </div>
         </form>
     </div>

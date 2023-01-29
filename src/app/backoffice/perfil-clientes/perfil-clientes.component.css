@@ -7,6 +7,13 @@ main {
     margin: auto;
 }
 
+.dados-cliente {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .fa-arrow-left {
     margin-right: 15px;
 }
@@ -26,7 +33,7 @@ h4 {
 .btns{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 500px;
     margin-top: 30px;
 }

@@ -10,65 +10,30 @@
 
     </div>
 
-    <div class="box-container">
-        <div class="box-cards">
-            <div class="card">
-                <div class="card_img">
-                    <img src="../../../assets/images/treino_ombros.png" alt="">
-                </div>
-                <div class="card-description">
-                    <h5>Ombros</h5>
-                </div>
+    <div class="box-container" *ngIf="treinosFilterList.length !== 0 ; else resultSearch">
+        <div class="card" *ngFor="let treino of treinosFilterList" [routerLink]="['/treinos/details', treino.id]">
+            <div class="card_img">
+                <img src="{{treino.image}}" alt="foto exercicio">
             </div>
-
-            <div class="card">
-                <div class="card_img">
-                    <img src="../../../assets/images/treino_peito.png" alt="">
-                </div>
-                <div class="card-description">
-                    <h5>Peitoral</h5>
-                </div>
-            </div>
-        </div>
-
-        <div class="box-cards">
-            <div class="card">
-                <div class="card_img">
-                    <img src="../../../assets/images/treino_biceps.png" alt="">
-                </div>
-                <div class="card-description">
-                    <h5>Bíceps</h5>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card_img">
-                    <img src="../../../assets/images/treino_triceps.png" alt="">
-                </div>
-                <div class="card-description">
-                    <h5>Tríceps</h5>
-                </div>
-            </div>
-        </div>
-
-        <div class="box-cards">
-            <div class="card">
-                <div class="card_img">
-                    <img src="../../../assets/images/treino_costa.png" alt="">
-                </div>
-                <div class="card-description">
-                    <h5>Costa</h5>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card_img">
-                    <img src="../../../assets/images/treino_pernas.png" alt="">
-                </div>
-                <div class="card-description">
-                    <h5>Pernas</h5>
-                </div>
+            <div class="card-description">
+                <h5>{{treino.musculo}}</h5>
             </div>
         </div>
     </div>
 </div>
+
+<ng-template #resultSearch>
+    <div class="card-sem-treinos">
+        <div class="card-msg">
+            <h5 class="card-title">Minhas Fichas de Treino</h5>
+        </div>
+        <div class="center">
+            <img src="../../../assets/images/emoticon_reservas.png">
+            <h4>Você não possui fichas de treino</h4>
+            <h6>Agende uma avaliação física</h6>
+        </div>
+        <div class="button">
+            <button class="btn btn-primary" routerLink="/painel">Agendar Avaliação</button>
+        </div>
+    </div>
+</ng-template>

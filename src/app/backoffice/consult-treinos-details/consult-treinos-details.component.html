@@ -1,0 +1,73 @@
+<main>
+    <div class="container">
+        <h2 class="login text-center">Ficha de Treino</h2>
+        <a class="btn btn-primary" routerLink="/backoffice/treinos"><i class="fa-solid fa-arrow-left"></i>voltar</a>
+        <form id="addAulaForm" #form="ngForm">
+            <div class="box-content">
+                <div class="box1">
+                    <div class="form-group">
+                        <label>ID</label>
+                        <input class="form-control" name="id" id="id" placeholder="{{treino.id}}" [(ngModel)]="treino.id" disabled/>
+                    </div>
+                    <div class="form-group">
+                        <label>Cliente ID</label>
+                        <input class="form-control" name="cliente_id" id="cliente_id" placeholder="{{treino.cliente_id}}" [(ngModel)]="treino.cliente_id" disabled/>
+                    </div>
+                    <div class="form-group">
+                        <label>Músculo</label>
+                        <select class="form-control" id="musculo" name="musculo" [(ngModel)]="treino.musculo" 
+                            required>
+                            <option class="form-group" *ngFor="let musculo of musculosList" [value]="musculo" required>{{musculo}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Exercicio</label>
+                        <input type="text" class="form-control" name="exercicio" id="exercicio"
+                            [(ngModel)]="treino.exercicio" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Séries</label>
+                        <select class="form-control" id="series" [(ngModel)]="treino.series" name="series" required>
+                            <option class="form-group" *ngFor="let series of seriesList" [value]="series" required>
+                                {{series}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Repetições</label>
+                        <select class="form-control" id="repeticoes" [(ngModel)]="treino.repeticoes" name="repeticoes" required>
+                            <option class="form-group" *ngFor="let rep of repeticoesList" [value]="rep" required>
+                                {{rep}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Descanso</label>
+                        <select class="form-control" id="descanso" [(ngModel)]="treino.descanso" name="descanso" required>
+                            <option class="form-group" *ngFor="let descanso of descansoList" [value]="descanso" required>
+                                {{descanso}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="box2">
+                    <div class="form-group">
+                        <label>Treino Card Músculo</label>
+                        <select class="form-control" id="image" [(ngModel)]="treino.image" name="image" required>
+                            <option class="form-group" value="../../../assets/images/treino_peito.png" required>Peitoral
+                            </option>
+                            <option class="form-group" value="../../../assets/images/treino_costa.png" required>Costa</option>
+                            <option class="form-group" value="../../../assets/images/treino_ombros.png" required>Ombros</option>
+                            <option class="form-group" value="../../../assets/images/treino_biceps.png" required>Bíceps</option>
+                            <option class="form-group" value="../../../assets/images/treino_triceps.png" required>Tríceps</option>
+                            <option class="form-group" value="../../../assets/images/treino_pernas.png"required>Pernas</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btns">
+                <button type="submit" class="btn btn-primary btn-block" (click)="updateTreino(treino.id)">Alterar Treino</button>
+                <button type="submit" class="btn btn-danger btn-block" (click)="deletarTreino(treino.id)" routerLink="/backoffice/treinos">Deletar Treino</button>
+            </div>
+        </form>
+    </div>
+</main>

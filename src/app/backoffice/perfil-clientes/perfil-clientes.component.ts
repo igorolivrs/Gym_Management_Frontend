@@ -10,7 +10,7 @@ import { AccountService } from 'src/app/services/account.service';
 })
 export class PerfilClientesComponent {
 
-  currentCliente: any;
+  currentAccount: any;
 
   cliente: any = {
     id: 0,
@@ -25,9 +25,9 @@ export class PerfilClientesComponent {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     const token = this.accountService.getAuthorizationToken();
-    this.currentCliente = this.accountService.getDecodedAccessToken(token); 
+    this.currentAccount = this.accountService.getDecodedAccessToken(token); 
     this.getClienteById(id);
-    console.log(this.currentCliente);
+    console.log(this.currentAccount);
   }
 
   getClienteById(id:any): void {

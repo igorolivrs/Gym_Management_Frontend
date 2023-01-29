@@ -8,9 +8,14 @@
             <label>AULAS</label>
         </div>
     </div>
-
+    <h5 class="login text-center">Encontre sua aula por dia:</h5>
+    <div class="search-container">
+        <form>
+            <input type="date" placeholder="   Encontrar cliente pelo nome ..." (input)="searchDate($event)">
+        </form>
+    </div>
     <div class="box-container">
-        <div class="card" *ngFor="let aula of aulasList; let i = index" [routerLink]="['../aulas/details', aula.id]"
+        <div class="card" *ngFor="let aula of aulasFilterList; let i = index" [routerLink]="['../aulas/details', aula.id]"
             routerLinkActive="router-link-active">
             <div class="card_img">
                 <img src="{{aula.image}}" alt="">
@@ -18,8 +23,8 @@
             <div class="card-description">
                 <h5>{{aula.nome_aula}}</h5>
                 <h6>{{aula.nivel}}</h6>
-                <i class="fa-regular fa-circle-user"><label>20/20 - Participantes</label></i>
-                <i class="fa-regular fa-clock"><label>09:30h - {{aula.duracao}}</label></i>
+                <i class="fa-regular fa-calendar"><label>{{aula.data}}</label></i>
+                <i class="fa-regular fa-clock"><label>{{aula.horario}} - {{aula.duracao}}</label></i>
             </div>
         </div>
     </div>

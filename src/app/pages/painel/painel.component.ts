@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AccountService } from 'src/app/services/account.service';
 import jwt_decode from 'jwt-decode';
+import { ReservasService } from 'src/app/services/reservas.service';
 
 @Component({
   selector: 'app-painel',
@@ -10,8 +11,9 @@ import jwt_decode from 'jwt-decode';
 export class PainelComponent {
 
   clienteList: any = {};
+  reservasList: any = [];
 
-  constructor(private accountService: AccountService) {}
+  constructor(private accountService: AccountService, private reservasService: ReservasService) {}
 
   
 
@@ -20,6 +22,7 @@ export class PainelComponent {
     const tokenInfo = this.getDecodedAccessToken(token);
     console.log(tokenInfo);
     this.getClienteById(tokenInfo.id);
+    this.readReservas();
   }
 
   getDecodedAccessToken(token: any): any {
@@ -40,6 +43,19 @@ export class PainelComponent {
         console.log(error);
       }
     )
+  }
+
+  readReservas(): void {
+    this.reservasService.getReserva()
+      .subscribe(
+        reservas => {
+          this.reservasList = reservas;
+          console.log(this.reservasList);
+        },
+        error => {
+          console.log(error);
+        }
+      )
   }
 
 }

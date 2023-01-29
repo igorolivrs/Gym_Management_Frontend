@@ -1,0 +1,40 @@
+<main>
+    <div class="container">
+        <h2 class="login text-center">Consultar Aulas</h2>
+        <div class="search-container">
+            <form>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="   Encontrar aula pelo nome ..." (input)="searchNome($event)">
+            </form>
+            <form>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="date" placeholder="Encontrar aula pela data" (input)="searchDate($event)">
+            </form>
+           <div>
+               <a class="btn btn-primary" routerLink="/backoffice/adicionar/aulas"><i class="fa-regular fa-calendar-plus"></i>Adicionar Nova Aula</a>
+           </div>  
+        </div>
+        <tr>
+            <td class="td_id">ID</td>
+            <td class="td_nome">NOME AULA</td>
+            <td class="td_nivel">NÍVEL</td>
+            <td class="td_data">DATA</td>
+            <td class="td_horario">HORARIO</td>
+            <td class="td_duracao">DURAÇÃO</td>
+            <td class="td_instrutor">INSTRUTOR</td>
+            <td class="td_local">LOCAL</td>
+            <td class="td_edit">EDITAR</td>
+        </tr>
+        <tr *ngFor="let aula of aulasFilterList">
+            <td class="td_id">{{aula.id}}</td>
+            <td class="td_nome">{{aula.nome_aula}}</td>
+            <td class="td_nivel">{{aula.nivel}}</td>
+            <td class="td_data">{{aula.data}}</td>
+            <td class="td_horario">{{aula.horario}}</td>
+            <td class="td_duracao">{{aula.duracao}}</td>
+            <td class="td_instrutor">{{aula.instrutor}}</td>
+            <td class="td_local">{{aula.local}}</td>
+            <td class="td_edit"><button type="button" class="btn btn-primary btn-block" [routerLink]="['/backoffice/aulas', aula.id ]">Editar</button></td>
+        </tr>
+    </div>
+</main>

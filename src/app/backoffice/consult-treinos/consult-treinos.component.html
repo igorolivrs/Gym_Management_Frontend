@@ -1,0 +1,23 @@
+<main>
+    <div class="container">
+        <h2 class="login text-center">Consultar Treinos</h2>
+        <div class="search-container">
+            <form>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="   Encontrar treino pelo Cliente ID..." (input)="searchID($event)">
+            </form> 
+        </div>
+        <tr>
+            <td class="td_id">ID</td>
+            <td class="td_cliente_id">CLIENTE ID</td>
+            <td class="td_musculo">MÚSCULO</td>
+            <td class="td_edit">EDITAR</td>
+        </tr>
+        <tr *ngFor="let treino of treinosFilterList">
+            <td class="td_id">{{treino.id}}</td>
+            <td class="td_cliente_id">{{treino.cliente_id}}</td>
+            <td class="td_musculo">{{treino.musculo}}</td>
+            <td class="td_edit"><button type="button" class="btn btn-primary btn-block" [routerLink]="['/backoffice/treinos/details', treino.id ]">Editar</button></td>
+        </tr>
+    </div>
+</main>

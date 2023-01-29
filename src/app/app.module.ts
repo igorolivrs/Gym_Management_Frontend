@@ -26,6 +26,12 @@ import { ReservasComponent } from './pages/reservas/reservas.component';
 import { PerfilClientesComponent } from './backoffice/perfil-clientes/perfil-clientes.component';
 import { ReservasDetailsComponent } from './pages/reservas-details/reservas-details.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ConsultAulasComponent } from './backoffice/consult-aulas/consult-aulas.component';
+import { ConsultAulasDetailsComponent } from './backoffice/consult-aulas-details/consult-aulas-details.component';
+import { ConsultTreinosComponent } from './backoffice/consult-treinos/consult-treinos.component';
+import { AddTreinosComponent } from './backoffice/add-treinos/add-treinos.component';
+import { ConsultTreinosDetailsComponent } from './backoffice/consult-treinos-details/consult-treinos-details.component';
+import { TreinosDetailsComponent } from './pages/treinos-details/treinos-details.component';
 
 
 @NgModule({
@@ -49,6 +55,12 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     PerfilClientesComponent,
     ReservasDetailsComponent,
     NotFoundComponent,
+    ConsultAulasComponent,
+    ConsultAulasDetailsComponent,
+    ConsultTreinosComponent,
+    AddTreinosComponent,
+    ConsultTreinosDetailsComponent,
+    TreinosDetailsComponent,
   ],
   imports: [
     BrowserModule,

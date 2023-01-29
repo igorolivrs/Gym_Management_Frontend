@@ -16,6 +16,12 @@ import { ReservasComponent } from './pages/reservas/reservas.component';
 import { PerfilClientesComponent } from './backoffice/perfil-clientes/perfil-clientes.component';
 import { ReservasDetailsComponent } from './pages/reservas-details/reservas-details.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ConsultAulasComponent } from './backoffice/consult-aulas/consult-aulas.component';
+import { ConsultAulasDetailsComponent } from './backoffice/consult-aulas-details/consult-aulas-details.component';
+import { ConsultTreinosComponent } from './backoffice/consult-treinos/consult-treinos.component';
+import { AddTreinosComponent } from './backoffice/add-treinos/add-treinos.component';
+import { ConsultTreinosDetailsComponent } from './backoffice/consult-treinos-details/consult-treinos-details.component';
+import { TreinosDetailsComponent } from './pages/treinos-details/treinos-details.component';
 
 const routes: Routes = [
   {
@@ -28,11 +34,17 @@ const routes: Routes = [
       { path: 'aulas', component: AulasComponent},
       { path: 'aulas/details/:id', component: AulasDetailsComponent},
       { path: 'treinos', component: TreinosComponent},
+      { path: 'treinos/details/:id', component: TreinosDetailsComponent},
       { path: 'reservas', component: ReservasComponent},
       { path: 'reservas/details/:id', component: ReservasDetailsComponent},
-      { path: 'clientes', component: ClientesComponent},
-      { path: 'perfil/cliente/:id', component: PerfilClientesComponent},
-      { path: 'add-aulas', component: AddAulasComponent},
+      { path: 'backoffice/clientes', component: ClientesComponent},
+      { path: 'backoffice/clientes/:id', component: PerfilClientesComponent},
+      { path: 'backoffice/aulas', component: ConsultAulasComponent},
+      { path: 'backoffice/adicionar/aulas', component: AddAulasComponent},
+      { path: 'backoffice/aulas/:id', component: ConsultAulasDetailsComponent},
+      { path: 'backoffice/treinos', component: ConsultTreinosComponent},
+      { path: 'backoffice/adicionar/treinos/:id', component: AddTreinosComponent},
+      { path: 'backoffice/treinos/details/:id', component: ConsultTreinosDetailsComponent},
     ],
     canActivate: [AuthGuard]
 
