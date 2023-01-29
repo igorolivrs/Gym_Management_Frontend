@@ -53,21 +53,21 @@ export class SideBarComponent {
     },
     {
       number: '2',
-      name: 'Clientes',
+      name: 'Consultar Clientes',
       icon: 'fa-solid fa-users',
-      rota: '/clientes',
+      rota: 'backoffice/clientes',
     },
     {
       number: '3',
-      name: 'Cadastrar Aulas',
-      icon: 'fa-regular fa-calendar-plus',
-      rota: '/add-aulas',
+      name: 'Consultar Aulas',
+      icon: 'fa-solid fa-table-list',
+      rota: '/backoffice/aulas',
     },
     {
       number: '4',
-      name: 'Aulas',
-      icon: 'fa-solid fa-table-list',
-      rota: '/aulas',
+      name: 'Treinos',
+      icon: 'fa-solid fa-dumbbell',
+      rota: '/backoffice/treinos',
     },
   ];
 

@@ -1,7 +1,10 @@
 <main>
     <div class="box-container">
-        <a class="btn btn-primary" routerLink="/clientes"><i class="fa-solid fa-arrow-left"></i>voltar</a>
-        <h4>Dados do Cliente</h4>
+        <a class="btn btn-primary" routerLink="/backoffice/clientes"><i class="fa-solid fa-arrow-left"></i>voltar</a>
+        <div class="dados-cliente">
+            <h4>Dados do Cliente</h4>   
+            <a class="btn btn-primary" [routerLink]="['/backoffice/adicionar/treinos', cliente.id ]">Criar Plano de Treino</a>
+        </div>      
         <form  #form="ngForm">
             <div class="inputs">
                 <div class="form-group">

@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environments';
-import { Observable } from 'rxjs';
 import jwt_decode from 'jwt-decode';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AulasService {
+export class TreinosService {
 
   constructor(private http: HttpClient) { }
 
@@ -24,7 +24,7 @@ export class AulasService {
     }
   }
 
-  getAulas() {
+  getTreinos() {
     let token = this.getAuthorizationToken();
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -32,10 +32,10 @@ export class AulasService {
     });
 
     const requestOptions = { headers: headers };
-    return this.http.get(`${environment.api}/aulas`, requestOptions)
+    return this.http.get(`${environment.api}/treinos`, requestOptions)
   }
 
-  getAulaById(id: any): Observable<any> {
+  getTreinoById(id: any): Observable<any> {
     let token = this.getAuthorizationToken();
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -43,10 +43,10 @@ export class AulasService {
     });
 
     const requestOptions = { headers: headers };
-    return this.http.get(`${environment.api}/aulas/${id}`, requestOptions);
+    return this.http.get(`${environment.api}/treinos/${id}`, requestOptions);
   }
 
-  updateAula(id: any, data: any): Observable<any> {
+  createTreino(treino: any): Observable<any> {
     let token = this.getAuthorizationToken();
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -54,10 +54,10 @@ export class AulasService {
     });
 
     const requestOptions = { headers: headers };
-    return this.http.put(`${environment.api}/aulas/${id}`, data, requestOptions)
+    return this.http.post(`${environment.api}/treinos`, treino, requestOptions);
   }
 
-  deleteAula(id: any): Observable<any> {
+  updateTreino(id: any, data: any): Observable<any> {
     let token = this.getAuthorizationToken();
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -65,7 +65,17 @@ export class AulasService {
     });
 
     const requestOptions = { headers: headers };
-    return this.http.delete(`${environment.api}/aulas/${id}`, requestOptions);
+    return this.http.put(`${environment.api}/treinos/${id}`, data, requestOptions)
   }
 
+  deleteTreino(id: any): Observable<any> {
+    let token = this.getAuthorizationToken();
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    });
+
+    const requestOptions = { headers: headers };
+    return this.http.delete(`${environment.api}/treinos/${id}`, requestOptions);
+  }
 }

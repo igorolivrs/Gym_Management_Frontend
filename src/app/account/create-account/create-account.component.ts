@@ -37,7 +37,7 @@ export class CreateAccountComponent implements OnInit {
         this.router.navigate(['']);
       },
       error => {
-        this.toast.error({ detail: "ERROR", summary: `${error}`, duration: 4000 });
+        this.toast.error({ detail: "ERROR", summary: `${error.error.error}`, duration: 4000 });
         console.log(error);
       });
 

@@ -23,7 +23,7 @@
             <td class="td_nome">{{cliente.name}}</td>
             <td class="td_email">{{cliente.email}}</td>
             <td class="td_nif">{{cliente.nif}}</td>
-            <td class="td_edit"><button type="button" class="btn btn-primary btn-block" [routerLink]="['../perfil/cliente', cliente.id]">Editar</button></td>
+            <td class="td_edit"><button type="button" class="btn btn-primary btn-block" [routerLink]="['/backoffice/clientes', cliente.id]">Editar</button></td>
         </tr>
     </div>
 </main>

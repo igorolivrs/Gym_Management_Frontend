@@ -5,6 +5,7 @@
 .container {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     border-radius: 8px;
     width: 1070px;
@@ -48,21 +49,12 @@ img {
 
 .box-container {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: space-between;
     width: 1070px;
     height: 400px;
     margin-top: 30px;
     border-radius: 8px;
-}
-
-.box-cards {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 1070px;
-    height: 120px;
-    
 }
 
 .card {
@@ -74,6 +66,7 @@ img {
     border-radius: 8px;
     border: 5px solid  rgb(58, 87, 232);
     cursor: pointer;
+    margin-bottom: 30px;
 }
 
 .card_img  img{
@@ -92,4 +85,47 @@ img {
     background-color:  rgb(58, 87, 232);
     border-radius: 0px 8px 8px 0px;
     color: white;
+}
+
+
+/* ng template */
+
+.card-sem-treinos {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 1070px;
+    height: 390px;
+    margin-top: 30px;
+}
+
+.card-msg {
+    height: 50vh;
+}
+
+.center img {
+    text-decoration: none;
+    color: inherit;
+    border: none;
+    outline: none;
+    width: 150px;
+    margin: 20px 0px;
+}
+
+.center{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.button{
+   position: absolute; 
+   top: 82%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   text-align: center;
 }
