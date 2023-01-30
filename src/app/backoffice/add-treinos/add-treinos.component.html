@@ -192,7 +192,7 @@
             </div>
 
             <div class="btns">
-                <button type="submit" class="btn btn-primary btn-block" (click)="createTreino()">Criar Treino</button>
+                <button type="submit" class="btn btn-primary btn-block" (click)="createTreino()" [disabled]="form.form.invalid">Criar Treino</button>
             </div>
         </form>
     </div>

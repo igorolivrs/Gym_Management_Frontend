@@ -77,29 +77,10 @@ export class SideBarComponent {
 
   ngOnInit(): void {
     const token = this.accountService.getAuthorizationToken();
-    const tokenInfo = this.getDecodedAccessToken(token);
-    console.log(tokenInfo);
-    this.getClienteById(tokenInfo.id);
+    this.currentCliente = this.accountService.getDecodedAccessToken(token);
+    console.log(this.currentCliente);
   }
 
-  getDecodedAccessToken(token: any): any {
-    try {
-      return jwt_decode(token);
-    } catch(Error) {
-      return null;
-    }
-  }
 
-  getClienteById(id:any): void {
-    this.accountService.getClienteById(id)
-    .subscribe(
-      cliente => {
-        this.currentCliente = cliente;
-      },
-      error => {
-        console.log(error);
-      }
-    )
-  }
 
 }

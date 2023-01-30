@@ -8,16 +8,16 @@
             </form> 
         </div>
         <tr>
-            <td class="td_id">ID</td>
-            <td class="td_cliente_id">CLIENTE ID</td>
-            <td class="td_musculo">MÚSCULO</td>
-            <td class="td_edit">EDITAR</td>
+            <td class="td_id bold">TREINO ID</td>
+            <td class="td_cliente_id bold">CLIENTE ID</td>
+            <td class="td_musculo bold">MÚSCULO</td>
+            <td class="td_edit bold">EDITAR</td>
         </tr>
         <tr *ngFor="let treino of treinosFilterList">
             <td class="td_id">{{treino.id}}</td>
             <td class="td_cliente_id">{{treino.cliente_id}}</td>
             <td class="td_musculo">{{treino.musculo}}</td>
-            <td class="td_edit"><button type="button" class="btn btn-primary btn-block" [routerLink]="['/backoffice/treinos/details', treino.id ]">Editar</button></td>
+            <td class="td_edit"><button type="button" class="btn btn-primary btn-block" [routerLink]="['/backoffice/treinos/details', treino.id ]"><i class="fa-solid fa-file-pen"></i></button></td>
         </tr>
     </div>
 </main>

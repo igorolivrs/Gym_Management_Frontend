@@ -12,18 +12,18 @@
             </form>
         </div>
         <tr>
-            <td class="td_id">ID</td>
-            <td class="td_nome">NOME</td>
-            <td class="td_email">EMAIL</td>
-            <td class="td_nif">NIF</td>
-            <td class="td_edit">EDIT</td>
+            <td class="td_id bold">ID</td>
+            <td class="td_nome bold">NOME</td>
+            <td class="td_email bold">EMAIL</td>
+            <td class="td_nif bold">NIF</td>
+            <td class="td_edit bold">EDIT</td>
         </tr>
         <tr *ngFor="let cliente of clientesFilterList">
             <td class="td_id">{{cliente.id}}</td>
             <td class="td_nome">{{cliente.name}}</td>
             <td class="td_email">{{cliente.email}}</td>
             <td class="td_nif">{{cliente.nif}}</td>
-            <td class="td_edit"><button type="button" class="btn btn-primary btn-block" [routerLink]="['/backoffice/clientes', cliente.id]">Editar</button></td>
+            <td class="td_edit"><button type="button" class="btn btn-primary btn-block" [routerLink]="['/backoffice/clientes', cliente.id]"><i class="fa-solid fa-file-pen"></i></button></td>
         </tr>
     </div>
 </main>

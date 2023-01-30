@@ -1,5 +1,4 @@
 <div class="side-nav-content">
-
     <ul class="nav-list" [ngClass]="{'nav-list-open': sideBarStatus}">
 
         <div *ngIf="currentCliente.nif !== '999999999' ; else resultSearch">
@@ -13,6 +12,7 @@
         </div>
     </ul>
 </div>
+<!-- ng-template ADMIN -->
 <ng-template #resultSearch>
     <li class="nav-list-item" *ngFor="let item of BackOffice" routerLink="{{item.rota}}" routerLinkActive="active-link">
         <i class="{{item.icon}}"></i>
