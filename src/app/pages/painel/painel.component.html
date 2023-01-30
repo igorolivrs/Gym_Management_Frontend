@@ -10,7 +10,7 @@
         <img src="../../../assets/images/Bg1.png" alt="">
     </div>
 
-    <div class="box-container">
+    <div class="box-container" *ngIf="clienteList.nif !== '999999999' ; else resultSearch">
 
         <div>
             <div class="box-name">
@@ -18,25 +18,24 @@
             </div>
 
             <div class="box">
-                <div class="box-content">
+                <div class="box-content" routerLink="/reservas">
                     <div class="box-icon">
-                        <i class="fa-solid fa-chart-line"></i>
+                        <i class="fa-solid fa-calendar-week"></i>
                     </div>
                     <div class="description">
-                        <h6>No momento, você possui {{reservasList.length}} reservas</h6>
-                        <a routerLink="/reservas">Click aqui para visualizar suas reservas</a>
+                        <h6>Reservas realizadas no momento: {{reservasList.length}}</h6>
                     </div>
                 </div>
 
                 <hr>
 
-                <div class="box-content">
+                <div class="box-content" routerLink="/treinos">
                     <div class="box-icon">
                         <i class="fa-solid fa-dumbbell"></i>
                     </div>
                     <div class="description">
-                        <h6>Esse mês você participou de 10 aulas</h6>
-                        <p>Sua meta é: 12 aulas</p>
+                        <h6>Veja suas fichas de treino</h6>
+                        <p>Treino do dia: {{days[dayOfWeek]}}</p>
                     </div>
                 </div>
 
@@ -47,11 +46,10 @@
                         <i class="fa-solid fa-clipboard-list"></i>
                     </div>
                     <div class="description">
-                        <h6>Esse mês você participou de 10 aulas</h6>
-                        <p>Sua meta é: 12 aulas</p>
+                        <h6>Solicitar Avaliação Física</h6>
                     </div>
                 </div>
-                
+
             </div>
         </div>
 
@@ -61,42 +59,110 @@
             </div>
 
             <div class="box">
-                <div class="box-content">
+                <div class="box-content" [routerLink]="['/aulas/details', aulasList[0].id]">
                     <div class="box-icon">
-                        <i class="fa-solid fa-chart-line"></i>
+                        <i class="fa-solid fa-dumbbell"></i>
                     </div>
                     <div class="description">
-                        <h6>Esse mês você participou de 10 aulas</h6>
-                        <p>Sua meta é: 12 aulas</p>
+                        <h6>{{aulasList[0].nome_aula}}</h6>
+                        <p>{{aulasList[0].nivel}}</p>
+                        <div class="description_row">
+                            <p>{{aulasList[0].data}}</p>
+                            <p>{{aulasList[0].horario}} H</p>
+                        </div>
+                    </div>
+                    <div class="description_img">
+                        <img src="{{aulasList[0].image}}" alt="foto aula">
                     </div>
                 </div>
 
                 <hr>
 
-                <div class="box-content">
+                <div class="box-content" [routerLink]="['/aulas/details', aulasList[2].id]">
                     <div class="box-icon">
-                        <i class="fa-solid fa-chart-line"></i>
+                        <i class="fa-solid fa-dumbbell"></i>
                     </div>
                     <div class="description">
-                        <h6>Esse mês você participou de 10 aulas</h6>
-                        <p>Sua meta é: 12 aulas</p>
+                        <h6>{{aulasList[2].nome_aula}}</h6>
+                        <p>{{aulasList[2].nivel}}</p>
+                        <div class="description_row">
+                            <p>{{aulasList[2].data}}</p>
+                            <p>{{aulasList[2].horario}} H</p>
+                        </div>
+                    </div>
+                    <div class="description_img">
+                        <img src="{{aulasList[2].image}}" alt="foto aula">
                     </div>
                 </div>
 
                 <hr>
 
-                <div class="box-content">
+                <div class="box-content" [routerLink]="['/aulas/details', aulasList[4].id]">
                     <div class="box-icon">
-                        <i class="fa-solid fa-chart-line"></i>
+                        <i class="fa-solid fa-dumbbell"></i>
                     </div>
                     <div class="description">
-                        <h6>Esse mês você participou de 10 aulas</h6>
-                        <p>Sua meta é: 12 aulas</p>
+                        <h6>{{aulasList[4].nome_aula}}</h6>
+                        <p>{{aulasList[4].nivel}}</p>
+                        <div class="description_row">
+                            <p>{{aulasList[4].data}}</p>
+                            <p>{{aulasList[4].horario}} H</p>
+                        </div>
+                    </div>
+                    <div class="description_img">
+                        <img src="{{aulasList[4].image}}" alt="foto aula">
                     </div>
                 </div>
-                
             </div>
         </div>
-
     </div>
 </div>
+<!-- ng-template ADMIN -->
+<ng-template  #resultSearch>
+<div class="box-container-admin">
+    <div>
+        <div class="box-name">
+            <h5>Dashboard</h5>
+        </div>
+        <div class="box-admin">
+            <div class="box-content-admin" routerLink="/backoffice/aulas">
+                <div class="box-icon">
+                    <i class="fa-solid fa-table-list"></i>
+                </div>
+                <div class="description">
+                    <h6>Consultar lista de aulas</h6>
+                    <p>Aulas disponíveis para reservar no momento: {{aulasList.length}}</p>
+                </div>
+            </div>
+
+            <div class="box-content-admin" routerLink="/backoffice/treinos">
+                <div class="box-icon">
+                    <i class="fa-solid fa-dumbbell"></i>
+                </div>
+                <div class="description">
+                    <h6>Consultar lista de treinos</h6>
+                </div>
+            </div>
+
+            <div class="box-content-admin" routerLink="/backoffice/clientes">
+                <div class="box-icon">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+                <div class="description">
+                    <h6>Consultar lista de clientes</h6>
+                </div>
+            </div>
+
+            <div class="box-content-admin" >
+                <div class="box-icon">
+                    <i class="fa-solid fa-dumbbell"></i>
+                </div>
+                <div class="description">
+                    <h6>Consultar lista de ......</h6>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</ng-template>

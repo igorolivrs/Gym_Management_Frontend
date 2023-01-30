@@ -1,26 +1,40 @@
 <main>
     <div class="container">
         <h2 class="login text-center">Ficha de Treino</h2>
-        <a class="btn btn-primary" routerLink="/backoffice/treinos"><i class="fa-solid fa-arrow-left"></i>voltar</a>
+        <a class="btn btn-primary" routerLink="/backoffice/treinos"><i
+                class="fa-solid fa-arrow-left"></i>voltar</a>
         <form id="addAulaForm" #form="ngForm">
             <div class="box-content">
-                <div class="box1">
-                    <div class="form-group">
-                        <label>ID</label>
-                        <input class="form-control" name="id" id="id" placeholder="{{treino.id}}" [(ngModel)]="treino.id" disabled/>
-                    </div>
-                    <div class="form-group">
-                        <label>Cliente ID</label>
-                        <input class="form-control" name="cliente_id" id="cliente_id" placeholder="{{treino.cliente_id}}" [(ngModel)]="treino.cliente_id" disabled/>
-                    </div>
+                <div class="box">
                     <div class="form-group">
                         <label>Músculo</label>
-                        <select class="form-control" id="musculo" name="musculo" [(ngModel)]="treino.musculo" 
-                            required>
-                            <option class="form-group" *ngFor="let musculo of musculosList" [value]="musculo" required>{{musculo}}
+                        <select class="form-control" id="musculo" name="musculo" [(ngModel)]="treino.musculo" required>
+                            <option class="form-group" *ngFor="let musculo of musculosList" [value]="musculo" required>
+                                {{musculo}}
                             </option>
                         </select>
                     </div>
+                    
+                    <div class="form-group">
+                        <label>Imagem Card Músculo</label>
+                        <select class="form-control" id="image" [(ngModel)]="treino.image" name="image" required>
+                            <option class="form-group" value="../../../assets/images/treino_peito.png" required>Peitoral
+                            </option>
+                            <option class="form-group" value="../../../assets/images/treino_costa.png" required>Costa
+                            </option>
+                            <option class="form-group" value="../../../assets/images/treino_ombros.png" required>Ombros
+                            </option>
+                            <option class="form-group" value="../../../assets/images/treino_biceps.png" required>Bíceps
+                            </option>
+                            <option class="form-group" value="../../../assets/images/treino_triceps.png" required>Tríceps
+                            </option>
+                            <option class="form-group" value="../../../assets/images/treino_pernas.png" required>Pernas
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="box1">
                     <div class="form-group">
                         <label>Exercicio</label>
                         <input type="text" class="form-control" name="exercicio" id="exercicio"
@@ -35,37 +49,150 @@
                     </div>
                     <div class="form-group">
                         <label>Repetições</label>
-                        <select class="form-control" id="repeticoes" [(ngModel)]="treino.repeticoes" name="repeticoes" required>
+                        <select class="form-control" id="repeticoes" [(ngModel)]="treino.repeticoes" name="repeticoes"
+                            required>
                             <option class="form-group" *ngFor="let rep of repeticoesList" [value]="rep" required>
                                 {{rep}}</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Descanso</label>
-                        <select class="form-control" id="descanso" [(ngModel)]="treino.descanso" name="descanso" required>
-                            <option class="form-group" *ngFor="let descanso of descansoList" [value]="descanso" required>
+                        <select class="form-control" id="descanso" [(ngModel)]="treino.descanso" name="descanso"
+                            required>
+                            <option class="form-group" *ngFor="let descanso of descansoList" [value]="descanso"
+                                required>
                                 {{descanso}}</option>
                         </select>
                     </div>
                 </div>
-                <div class="box2">
+                <div class="box1">
                     <div class="form-group">
-                        <label>Treino Card Músculo</label>
-                        <select class="form-control" id="image" [(ngModel)]="treino.image" name="image" required>
-                            <option class="form-group" value="../../../assets/images/treino_peito.png" required>Peitoral
-                            </option>
-                            <option class="form-group" value="../../../assets/images/treino_costa.png" required>Costa</option>
-                            <option class="form-group" value="../../../assets/images/treino_ombros.png" required>Ombros</option>
-                            <option class="form-group" value="../../../assets/images/treino_biceps.png" required>Bíceps</option>
-                            <option class="form-group" value="../../../assets/images/treino_triceps.png" required>Tríceps</option>
-                            <option class="form-group" value="../../../assets/images/treino_pernas.png"required>Pernas</option>
+                        <label>Exercicio</label>
+                        <input type="text" class="form-control" name="exercicio2" id="exercicio2"
+                            [(ngModel)]="treino.exercicio2" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Séries</label>
+                        <select class="form-control" id="series2" [(ngModel)]="treino.series2" name="series2" required>
+                            <option class="form-group" *ngFor="let series of seriesList" [value]="series" required>
+                                {{series}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Repetições</label>
+                        <select class="form-control" id="repeticoes2" [(ngModel)]="treino.repeticoes2" name="repeticoes2"
+                            required>
+                            <option class="form-group" *ngFor="let rep of repeticoesList" [value]="rep" required>
+                                {{rep}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Descanso</label>
+                        <select class="form-control" id="descanso2" [(ngModel)]="treino.descanso2" name="descanso2"
+                            required>
+                            <option class="form-group" *ngFor="let descanso of descansoList" [value]="descanso"
+                                required>
+                                {{descanso}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="form-group">
+                        <label>Exercicio</label>
+                        <input type="text" class="form-control" name="exercicio3" id="exercicio3"
+                            [(ngModel)]="treino.exercicio3" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Séries</label>
+                        <select class="form-control" id="series3" [(ngModel)]="treino.series3" name="series3" required>
+                            <option class="form-group" *ngFor="let series of seriesList" [value]="series" required>
+                                {{series}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Repetições</label>
+                        <select class="form-control" id="repeticoes3" [(ngModel)]="treino.repeticoes3" name="repeticoes3"
+                            required>
+                            <option class="form-group" *ngFor="let rep of repeticoesList" [value]="rep" required>
+                                {{rep}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Descanso</label>
+                        <select class="form-control" id="descanso3" [(ngModel)]="treino.descanso3" name="descanso3"
+                            required>
+                            <option class="form-group" *ngFor="let descanso of descansoList" [value]="descanso"
+                                required>
+                                {{descanso}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="form-group">
+                        <label>Exercicio</label>
+                        <input type="text" class="form-control" name="exercicio4" id="exercicio4"
+                            [(ngModel)]="treino.exercicio4" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Séries</label>
+                        <select class="form-control" id="series4" [(ngModel)]="treino.series4" name="series4" required>
+                            <option class="form-group" *ngFor="let series of seriesList" [value]="series" required>
+                                {{series}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Repetições</label>
+                        <select class="form-control" id="repeticoes4" [(ngModel)]="treino.repeticoes4" name="repeticoes4"
+                            required>
+                            <option class="form-group" *ngFor="let rep of repeticoesList" [value]="rep" required>
+                                {{rep}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Descanso</label>
+                        <select class="form-control" id="descanso4" [(ngModel)]="treino.descanso4" name="descanso4"
+                            required>
+                            <option class="form-group" *ngFor="let descanso of descansoList" [value]="descanso"
+                                required>
+                                {{descanso}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="form-group">
+                        <label>Exercicio</label>
+                        <input type="text" class="form-control" name="exercicio5" id="exercicio5"
+                            [(ngModel)]="treino.exercicio5" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Séries</label>
+                        <select class="form-control" id="series5" [(ngModel)]="treino.series5" name="series5" required>
+                            <option class="form-group" *ngFor="let series of seriesList" [value]="series" required>
+                                {{series}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Repetições</label>
+                        <select class="form-control" id="repeticoes5" [(ngModel)]="treino.repeticoes5" name="repeticoes5"
+                            required>
+                            <option class="form-group" *ngFor="let rep of repeticoesList" [value]="rep" required>
+                                {{rep}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Descanso</label>
+                        <select class="form-control" id="descanso5" [(ngModel)]="treino.descanso5" name="descanso5"
+                            required>
+                            <option class="form-group" *ngFor="let descanso of descansoList" [value]="descanso"
+                                required>
+                                {{descanso}}</option>
                         </select>
                     </div>
                 </div>
             </div>
 
             <div class="btns">
-                <button type="submit" class="btn btn-primary btn-block" (click)="updateTreino(treino.id)">Alterar Treino</button>
+                <button type="submit" class="btn btn-primary btn-block" (click)="updateTreino(treino.id)" [disabled]="form.form.invalid">Editar Treino</button>
                 <button type="submit" class="btn btn-danger btn-block" (click)="deletarTreino(treino.id)" routerLink="/backoffice/treinos">Deletar Treino</button>
             </div>
         </form>

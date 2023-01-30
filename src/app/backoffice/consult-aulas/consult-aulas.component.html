@@ -15,15 +15,15 @@
            </div>  
         </div>
         <tr>
-            <td class="td_id">ID</td>
-            <td class="td_nome">NOME AULA</td>
-            <td class="td_nivel">NÍVEL</td>
-            <td class="td_data">DATA</td>
-            <td class="td_horario">HORARIO</td>
-            <td class="td_duracao">DURAÇÃO</td>
-            <td class="td_instrutor">INSTRUTOR</td>
-            <td class="td_local">LOCAL</td>
-            <td class="td_edit">EDITAR</td>
+            <td class="td_id bold">ID</td>
+            <td class="td_nome bold">NOME AULA</td>
+            <td class="td_nivel bold">NÍVEL</td>
+            <td class="td_data bold">DATA</td>
+            <td class="td_horario bold">HORÁRIO</td>
+            <td class="td_duracao bold">DURAÇÃO</td>
+            <td class="td_instrutor bold">INSTRUTOR</td>
+            <td class="td_local bold">LOCAL</td>
+            <td class="td_edit bold">EDITAR</td>
         </tr>
         <tr *ngFor="let aula of aulasFilterList">
             <td class="td_id">{{aula.id}}</td>
@@ -34,7 +34,7 @@
             <td class="td_duracao">{{aula.duracao}}</td>
             <td class="td_instrutor">{{aula.instrutor}}</td>
             <td class="td_local">{{aula.local}}</td>
-            <td class="td_edit"><button type="button" class="btn btn-primary btn-block" [routerLink]="['/backoffice/aulas', aula.id ]">Editar</button></td>
+            <td class="td_edit"><button type="button" class="btn btn-primary btn-block" [routerLink]="['/backoffice/aulas', aula.id ]"><i class="fa-solid fa-file-pen"></i></button></td>
         </tr>
     </div>
 </main>

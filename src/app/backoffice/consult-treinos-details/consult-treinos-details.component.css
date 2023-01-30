@@ -14,19 +14,35 @@ main {
     margin: 15px 0px;
 }
 
+.box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.box1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 a {
     margin-bottom: 30px;
 }
 
 .box-content {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
 }
 
 .btns {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     margin-top: 50px;
+}
+
+.fa-arrow-left {
+    margin-right: 15px;
 }
 

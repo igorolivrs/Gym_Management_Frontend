@@ -6,12 +6,23 @@
     width: 1280px;
 }
 
-td {
-    border: 1px solid black;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+tr {
+    display: flex;
+    flex-direction: row;
 }
+
+td {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid black;
+    height: 50px;
+}
+
+.bold {
+    font-weight: 700;
+} 
 
 .td_id {
     width: 80px;

@@ -5,11 +5,22 @@
     margin: auto;
 }
 
+tr {
+    display: flex;
+    flex-direction: row;
+}
+
 td {
-    border: 1px solid black;
-    justify-content: center;
+    display: flex;
     align-items: center;
+    justify-content: center;
     text-align: center;
+    border: 1px solid black;
+    height: 50px;
+}
+
+.bold {
+    font-weight: 700;
 }
 
 .td_id {
@@ -34,11 +45,11 @@ td {
 
 .search-container {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-bottom: 2em;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 20px;
     width: 85%;
-    height: 110px;
+    height: 90px;
 }
 
 .search-container form{

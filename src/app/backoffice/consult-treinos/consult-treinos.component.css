@@ -6,12 +6,23 @@
     width: 640px;
 }
 
-td {
-    border: 1px solid black;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+tr {
+    display: flex;
+    flex-direction: row;
 }
+
+td {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid black;
+    height: 50px;
+}
+
+.bold {
+    font-weight: 700;
+} 
 
 .td_id, .td_cliente_id {
     width: 150px;
@@ -62,6 +73,4 @@ td {
     border-radius: 8px;
     padding: 10px 25px;
 }
-
-
 
