@@ -1,0 +1,33 @@
+<main>
+    <div class="container">
+        <h2 class="login text-center">Adicionar um Cliente</h2>
+        <a class="btn btn-primary" routerLink="/backoffice/clientes"><i class="fa-solid fa-arrow-left"></i>voltar</a>
+        <form id="addAulaForm" #form="ngForm">
+            <div class="box-content">
+                <div class="box1">
+                    <div class="form-group">
+                        <label>Nome</label>
+                        <input class="form-control" name="name" id="name" [(ngModel)]="cliente.name" required />
+                    </div>
+                    <div class="form-group">
+                        <label>E-mail</label>
+                        <input class="form-control" name="email" id="email" [(ngModel)]="cliente.email" required />
+                    </div>
+                    <div class="form-group">
+                        <label>NIF</label>
+                        <input class="form-control" name="nif" id="nif" [(ngModel)]="cliente.nif" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input class="form-control" type="password" name="password" id="password" [(ngModel)]="cliente.password"
+                            required />
+                    </div>
+                </div>
+            </div>
+
+            <div class="btns">
+                <button type="button" class="btn btn-primary btn-block" [disabled]="form.form.invalid" (click)="createAccount()">Adicionar Cliente</button>
+            </div>
+        </form>
+    </div>
+</main>

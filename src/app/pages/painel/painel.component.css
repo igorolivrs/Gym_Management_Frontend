@@ -150,10 +150,14 @@ hr {
 .box-content-admin {
     display: flex;
     flex-direction: row;
+    justify-content: start;
     align-items: center;
     width: 500px;
     padding: 0 20px;
     cursor: pointer;
     border: 1px solid rgb(126, 118, 118);
     border-radius: 8px;
+}
+.box-content-admin h6 {
+    margin: 0;
 }

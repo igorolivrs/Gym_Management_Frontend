@@ -32,6 +32,7 @@ import { ConsultTreinosComponent } from './backoffice/consult-treinos/consult-tr
 import { AddTreinosComponent } from './backoffice/add-treinos/add-treinos.component';
 import { ConsultTreinosDetailsComponent } from './backoffice/consult-treinos-details/consult-treinos-details.component';
 import { TreinosDetailsComponent } from './pages/treinos-details/treinos-details.component';
+import { AddClientesComponent } from './backoffice/add-clientes/add-clientes.component';
 
 
 @NgModule({
@@ -61,6 +62,7 @@ import { TreinosDetailsComponent } from './pages/treinos-details/treinos-details
     AddTreinosComponent,
     ConsultTreinosDetailsComponent,
     TreinosDetailsComponent,
+    AddClientesComponent,
   ],
   imports: [
     BrowserModule,

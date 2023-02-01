@@ -2,7 +2,7 @@
 
     <div class="img-content">
         <div class="img-content-name">
-            <h5>Bem-vindo, {{clienteList.name}}</h5>
+            <h5>Bem-vindo, {{currentCliente.name}}</h5>
         </div>
         <div class="img-content-photo">
             <img src="../../../assets/images/user_dafault.jpg" alt="foto utilizador">
@@ -10,7 +10,7 @@
         <img src="../../../assets/images/Bg1.png" alt="">
     </div>
 
-    <div class="box-container" *ngIf="clienteList.nif !== '999999999' ; else resultSearch">
+    <div class="box-container" *ngIf="currentCliente.nif !== '999999999' ; else resultSearch">
 
         <div>
             <div class="box-name">
@@ -59,58 +59,58 @@
             </div>
 
             <div class="box">
-                <div class="box-content" [routerLink]="['/aulas/details', aulasList[0].id]">
+                <div class="box-content" [routerLink]="['/aulas/details', aulasList[numbers[0]].id]">
                     <div class="box-icon">
                         <i class="fa-solid fa-dumbbell"></i>
                     </div>
                     <div class="description">
-                        <h6>{{aulasList[0].nome_aula}}</h6>
-                        <p>{{aulasList[0].nivel}}</p>
+                        <h6>{{aulasList[numbers[0]].nome_aula}}</h6>
+                        <p>{{aulasList[numbers[0]].nivel}}</p>
                         <div class="description_row">
-                            <p>{{aulasList[0].data}}</p>
-                            <p>{{aulasList[0].horario}} H</p>
+                            <p>{{aulasList[numbers[0]].data}}</p>
+                            <p>{{aulasList[numbers[0]].horario}} H</p>
                         </div>
                     </div>
                     <div class="description_img">
-                        <img src="{{aulasList[0].image}}" alt="foto aula">
+                        <img src="{{aulasList[numbers[0]].image}}" alt="foto aula">
                     </div>
                 </div>
 
                 <hr>
 
-                <div class="box-content" [routerLink]="['/aulas/details', aulasList[2].id]">
+                <div class="box-content" [routerLink]="['/aulas/details', aulasList[numbers[1]].id]">
                     <div class="box-icon">
                         <i class="fa-solid fa-dumbbell"></i>
                     </div>
                     <div class="description">
-                        <h6>{{aulasList[2].nome_aula}}</h6>
-                        <p>{{aulasList[2].nivel}}</p>
+                        <h6>{{aulasList[numbers[1]].nome_aula}}</h6>
+                        <p>{{aulasList[numbers[1]].nivel}}</p>
                         <div class="description_row">
-                            <p>{{aulasList[2].data}}</p>
-                            <p>{{aulasList[2].horario}} H</p>
+                            <p>{{aulasList[numbers[1]].data}}</p>
+                            <p>{{aulasList[numbers[1]].horario}} H</p>
                         </div>
                     </div>
                     <div class="description_img">
-                        <img src="{{aulasList[2].image}}" alt="foto aula">
+                        <img src="{{aulasList[numbers[1]].image}}" alt="foto aula">
                     </div>
                 </div>
 
                 <hr>
 
-                <div class="box-content" [routerLink]="['/aulas/details', aulasList[4].id]">
+                <div class="box-content" [routerLink]="['/aulas/details', aulasList[numbers[2]].id]">
                     <div class="box-icon">
                         <i class="fa-solid fa-dumbbell"></i>
                     </div>
                     <div class="description">
-                        <h6>{{aulasList[4].nome_aula}}</h6>
-                        <p>{{aulasList[4].nivel}}</p>
+                        <h6>{{aulasList[numbers[2]].nome_aula}}</h6>
+                        <p>{{aulasList[numbers[2]].nivel}}</p>
                         <div class="description_row">
-                            <p>{{aulasList[4].data}}</p>
-                            <p>{{aulasList[4].horario}} H</p>
+                            <p>{{aulasList[numbers[2]].data}}</p>
+                            <p>{{aulasList[numbers[2]].horario}} H</p>
                         </div>
                     </div>
                     <div class="description_img">
-                        <img src="{{aulasList[4].image}}" alt="foto aula">
+                        <img src="{{aulasList[numbers[2]].image}}" alt="foto aula">
                     </div>
                 </div>
             </div>
@@ -150,15 +150,16 @@
                 </div>
                 <div class="description">
                     <h6>Consultar lista de clientes</h6>
+                    <p>Total de clientes cadastrados: {{nClientesList}}</p>
                 </div>
             </div>
 
-            <div class="box-content-admin" >
+            <div class="box-content-admin"  routerLink="/backoffice/adicionar/aulas">
                 <div class="box-icon">
-                    <i class="fa-solid fa-dumbbell"></i>
+                    <i class="fa-solid fa-plus"></i>
                 </div>
                 <div class="description">
-                    <h6>Consultar lista de ......</h6>
+                    <h6>Adicionar nova aula</h6>
                 </div>
             </div>
 

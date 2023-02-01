@@ -65,7 +65,7 @@ export class SideBarComponent {
     },
     {
       number: '4',
-      name: 'Treinos',
+      name: 'Consultar Treinos',
       icon: 'fa-solid fa-dumbbell',
       rota: '/backoffice/treinos',
     },
