@@ -32,9 +32,8 @@
             </div>
 
             <div class="btns">
-                <button type="button" class="btn btn-primary btn-block" [disabled]="form.form.invalid" (click)="createAccount()">Criar Nova Conta</button>
                 <button type="button" class="btn btn-primary btn-block" [disabled]="form.form.invalid" (click)="updateCliente(cliente.id)">Atualizar Dados</button>
-                <button type="button" class="btn btn-danger btn-block" (click)="deletarConta(cliente.id)" routerLink="/clientes">Deletar Conta</button>
+                <button type="button" class="btn btn-danger btn-block" (click)="deletarConta(cliente.id)" routerLink="/backoffice/clientes">Deletar Conta</button>
             </div>
         </form>
     </div>

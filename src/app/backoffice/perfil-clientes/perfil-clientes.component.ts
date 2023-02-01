@@ -42,26 +42,6 @@ export class PerfilClientesComponent {
     )
   }
 
-  createAccount(): void {
-    const data = {
-      name: this.cliente.name,
-      email: this.cliente.email,
-      nif: this.cliente.nif,
-      password: this.cliente.password
-    };
-
-    this.accountService.createAccount(data).subscribe(
-      response => {
-        this.toast.success({ detail: "SUCCESS", summary: "Utilizador criado com sucesso", duration: 4000 });
-        console.log(response);
-      },
-      error => {
-        this.toast.error({ detail: "ERROR", summary: `${error}`, duration: 4000 });
-        console.log(error);
-      });
-
-  }
-
   updateCliente(id: any): void {
     const data = {
       name: this.cliente.name,

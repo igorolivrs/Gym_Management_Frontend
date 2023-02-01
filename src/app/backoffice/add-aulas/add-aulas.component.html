@@ -78,7 +78,7 @@
                 <textarea class="form-control" name="descricao" id="descricao" [(ngModel)]="aula.descricao"></textarea>
             </div>
             <div class="btns">
-                <button type="submit" class="btn btn-primary btn-block" (click)="createAula()">Adicionar aula</button>
+                <button type="submit" class="btn btn-primary btn-block" [disabled]="form.form.invalid" (click)="createAula()">Adicionar aula</button>
             </div>
         </form>
     </div>

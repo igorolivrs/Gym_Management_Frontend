@@ -11,11 +11,17 @@ import { AulasService } from 'src/app/services/aulas.service';
 })
 export class PainelComponent {
 
-  clienteList: any = {};
+  currentCliente: any = {};
+  nClientesList: any;
   reservasList: any = [];
   aulasList: any = [];
+  numbers: number[] = [];
 
-  constructor(private aulasService: AulasService, private accountService: AccountService, private reservasService: ReservasService) {}
+  constructor(private aulasService: AulasService, private accountService: AccountService, private reservasService: ReservasService) {
+    for (let i = 0; i < 3; i++) {
+      this.numbers.push(Math.floor(Math.random() * 42) + 1);
+    }
+  }
 
   dayOfWeek = new Date().toLocaleString('pt-BR', { weekday: 'long' });
   days: any = {
@@ -34,8 +40,10 @@ export class PainelComponent {
     console.log(tokenInfo);
     this.getClienteById(tokenInfo.id);
     this.readReservas();
+    this.readClientes();
     this.readAulas();
     console.log(this.aulasList);
+    console.log(this.numbers);
   }
 
   getDecodedAccessToken(token: any): any {
@@ -50,7 +58,7 @@ export class PainelComponent {
     this.accountService.getClienteById(id)
     .subscribe(
       cliente => {
-        this.clienteList = cliente;
+        this.currentCliente = cliente;
       },
       error => {
         console.log(error);
@@ -77,6 +85,21 @@ export class PainelComponent {
       aulas => {
         this.aulasList = aulas;
         console.log(this.aulasList);
+      },
+      error => {
+        console.log(error);
+      }
+    )
+  }
+
+  readClientes(): void {
+    let nclientes: any = [];
+    this.accountService.getCliente()
+    .subscribe(
+      clientes => {
+        nclientes = clientes;
+        this.nClientesList = nclientes.length;
+        console.log(this.nClientesList);
       },
       error => {
         console.log(error);
